@@ -9,7 +9,7 @@ import { FAQ } from './components/FAQ';
 import { FinalCTA } from './components/FinalCTA';
 import { Contact } from './components/Contact';
 import { BrandFooter } from './components/BrandFooter';
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react'; // Added for Vercel Web Analytics
 
 export default function App() {
   return (
@@ -25,6 +25,7 @@ export default function App() {
       <FinalCTA />
       <Contact />
       <BrandFooter />
+      {/* Vercel Web Analytics tracking */}
       <Analytics />
     </div>
   );
