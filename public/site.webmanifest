@@ -1,0 +1,16 @@
+{
+  "name": "Zámečnictví Brno - Petr Kodýs",
+  "short_name": "Zámečnictví Brno",
+  "description": "Profesionální zámečnické služby v Brně. Non-stop pohotovost 24/7.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
