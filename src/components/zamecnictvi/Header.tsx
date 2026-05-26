@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, X, Lock, Clock } from 'lucide-react';
+import { Phone, Menu, X, Lock } from 'lucide-react';
 
 const navLinks = [
   { label: 'Domů', href: '#' },
