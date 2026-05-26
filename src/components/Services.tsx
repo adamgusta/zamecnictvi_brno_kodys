@@ -1,63 +1,80 @@
-import { Chrome as Home, Building2, Car, KeyRound, ShieldCheck, Wrench } from 'lucide-react';
+import { Key, Car, Lock, ArrowRight } from 'lucide-react';
 
 const services = [
   {
-    icon: Home,
-    title: 'Residential Locksmith',
-    description: 'Emergency lockouts, lock replacements, and security upgrades for homes across Watford and Hertfordshire.',
-  },
-  {
-    icon: Building2,
-    title: 'Commercial Locksmith',
-    description: 'Master key systems, access control, and high-security locks for offices, shops, and businesses.',
+    icon: Key,
+    title: 'Nouzové otevírání dveří',
+    description: 'Byty, domy, zabouchnuté i zamčené klíče. Šetrně bez poškození, rychle na místě.',
+    features: ['Dveře bytů a domů', 'Zabouchnuté klíče', 'Bez poškození zámku'],
   },
   {
     icon: Car,
-    title: 'Auto Locksmith',
-    description: 'Locked out of your car? We open all vehicle types without damage. Key cutting and transponder programming.',
+    title: 'Otevírání automobilů',
+    description: 'Rychlé otevření aut všech značek při ztrátě nebo zabouchnutí klíčů uvnitř.',
+    features: ['Všechny značky aut', 'Do 30 minut na místě', 'Ztracené i zabouchnuté klíče'],
   },
   {
-    icon: KeyRound,
-    title: 'Lock-Outs & Entry',
-    description: 'Fast, damage-free entry when you\'re locked out of your home, office, or vehicle. No damage guaranteed.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Security Upgrades',
-    description: 'British Standard lock fitting, anti-snap cylinders, and free home security assessments to keep you safe.',
-  },
-  {
-    icon: Wrench,
-    title: 'Lock Repairs & Fitting',
-    description: 'Broken, stiff or faulty locks repaired or replaced quickly. Competitive rates with no hidden charges.',
+    icon: Lock,
+    title: 'Výměna zámků a zabezpečení',
+    description: 'Výměna cylindrických vložek, servis po vloupání, montáž bezpečnostního kování.',
+    features: ['Cylindrické vložky', 'Servis po vloupání', 'Bezpečnostní kování'],
   },
 ];
 
 export function Services() {
   return (
-    <section id="services" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="sluzby" className="py-20 bg-slate-950 border-t border-slate-900 relative overflow-hidden">
+      {/* Soft ambient glowing spot */}
+      <div className="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-14">
-          <p className="text-yellow-600 font-semibold text-sm uppercase tracking-widest mb-2">What We Offer</p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Professional Locksmith Services</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            From emergency lockouts to full security installations, we cover every lock and key need across Watford and surrounding areas.
+          <p className="text-amber-500 font-bold text-sm uppercase tracking-widest mb-2">Naše služby</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+            Profesionální zámečnické služby
+          </h2>
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            Rychlé a spolehlivé řešení každé situace. Pomoc je na cestě ihned po vašem zavolání.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map(({ icon: Icon, title, description }) => (
-            <div
-              key={title}
-              className="group p-7 rounded-2xl border border-gray-100 hover:border-yellow-300 hover:shadow-xl hover:shadow-yellow-50 transition-all duration-300 cursor-default"
-            >
-              <div className="w-12 h-12 bg-yellow-50 group-hover:bg-yellow-500 rounded-xl flex items-center justify-center mb-5 transition-colors duration-300">
-                <Icon className="w-6 h-6 text-yellow-500 group-hover:text-gray-950 transition-colors duration-300" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {services.map((service) => {
+            const Icon = service.icon;
+            return (
+              <div
+                key={service.title}
+                className="group bg-slate-900/40 backdrop-blur-md rounded-2xl p-7 border border-slate-800/80 hover:border-amber-500/40 hover:shadow-2xl hover:shadow-amber-500/5 hover:-translate-y-1.5 transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-amber-500/10 group-hover:bg-amber-500 border border-amber-500/20 group-hover:border-transparent rounded-xl flex items-center justify-center mb-5 transition-all duration-300">
+                  <Icon className="w-7 h-7 text-amber-400 group-hover:text-slate-950 transition-colors duration-300" />
+                </div>
+
+                <h3 className="font-extrabold text-white text-xl mb-3">{service.title}</h3>
+                <p className="text-slate-400 text-sm leading-relaxed mb-5">{service.description}</p>
+
+                <ul className="space-y-2.5">
+                  {service.features.map((feature) => (
+                    <li key={feature} className="flex items-center gap-2.5 text-sm text-slate-300">
+                      <div className="w-1.5 h-1.5 bg-amber-500 rounded-full flex-shrink-0" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">{title}</h3>
-              <p className="text-gray-500 text-sm leading-relaxed">{description}</p>
-            </div>
-          ))}
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="mt-12 text-center">
+          <a
+            href="tel:+420777818339"
+            className="inline-flex items-center gap-2 text-amber-400 hover:text-amber-300 font-bold transition-colors group"
+          >
+            <span>Potřebujete pomoc ihned? Zavolejte nám</span>
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform" />
+          </a>
         </div>
       </div>
     </section>

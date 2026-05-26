@@ -46,7 +46,7 @@ export function BrandFooter() {
             <ul className="space-y-2.5">
               {services.map((s, idx) => (
                 <li key={idx}>
-                  <a href={s.href} className="text-sm hover:text-amber-450 transition-colors text-slate-400">
+                  <a href={s.href} className="text-sm hover:text-amber-400 transition-colors text-slate-400">
                     {s.name}
                   </a>
                 </li>
@@ -73,13 +73,13 @@ export function BrandFooter() {
             <h4 className="text-white font-extrabold mb-5 text-sm uppercase tracking-wider">Kontakt</h4>
             <ul className="space-y-4">
               <li>
-                <a href="tel:+420777818339" className="flex items-start gap-3 hover:text-amber-450 transition-colors">
+                <a href="tel:+420777818339" className="flex items-start gap-3 hover:text-amber-400 transition-colors">
                   <Phone className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
                   <span className="text-sm font-bold text-slate-350">+420 777 818 339</span>
                 </a>
               </li>
               <li>
-                <a href="mailto:kodys.petr1@gmail.com" className="flex items-start gap-3 hover:text-amber-450 transition-colors">
+                <a href="mailto:kodys.petr1@gmail.com" className="flex items-start gap-3 hover:text-amber-400 transition-colors">
                   <Mail className="w-4 h-4 mt-0.5 text-amber-500 flex-shrink-0" />
                   <span className="text-sm text-slate-350">kodys.petr1@gmail.com</span>
                 </a>

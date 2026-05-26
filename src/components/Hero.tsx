@@ -2,7 +2,10 @@ import { Phone, Clock, MapPin, Shield } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+    <section className="relative min-h-screen flex items-center bg-slate-950 overflow-hidden">
+      {/* Soft ambient glowing spot */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-amber-500/10 blur-[130px] rounded-full pointer-events-none" />
+
       {/* Subtle grid pattern overlay */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -10,7 +13,7 @@ export function Hero() {
         }} />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 w-full">
         <div className="text-center">
           {/* Trust badge */}
           <div className="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/30 text-amber-400 text-sm font-semibold px-4 py-2 rounded-full mb-8">
@@ -19,8 +22,8 @@ export function Hero() {
           </div>
 
           {/* Main headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            NON-STOP Zámečnictví Brno
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6 tracking-tight">
+            NON-STOP <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-amber-500">Zámečnictví Brno</span>
           </h1>
 
           <p className="text-xl sm:text-2xl text-slate-300 max-w-3xl mx-auto mb-10">
@@ -31,7 +34,7 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
             <a
               href="tel:+420777818339"
-              className="group flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-900 font-bold px-8 py-5 rounded-xl text-lg transition-all hover:shadow-2xl hover:shadow-amber-500/30 hover:-translate-y-1"
+              className="group flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-900 font-extrabold px-8 py-5 rounded-xl text-lg transition-all hover:shadow-2xl hover:shadow-amber-500/30 hover:-translate-y-1 animate-pulse-gold"
             >
               <Phone className="w-6 h-6 group-hover:animate-pulse" />
               <span>Zavolat pohotovost:</span>
@@ -54,7 +57,7 @@ export function Hero() {
       </div>
 
       {/* Decorative gradient bottom */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-900 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-slate-950 to-transparent pointer-events-none" />
     </section>
   );
 }
